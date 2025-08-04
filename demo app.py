@@ -221,11 +221,11 @@ with st.container():
             username = st.text_input("Username", key="username")
             password = st.text_input("Password", type="password", key="password")
             if st.form_submit_button("Login to Demo"):
-                if username == "loans@yourbank.com" and password == "12345":
+                if username == "loans@yourbank.com" and password == "JesusLovesUs2007":
                     st.session_state.logged_in = True
                     st.rerun()
                 else:
-                    st.error("Use: loans@yourbank.com / 12345")
+                    st.error("Use: loans@yourbank.com / JesusLovesUs2007")
 
     else:
         # Dashboard
@@ -277,4 +277,5 @@ with st.container():
 
         if st.button("Logout"):
             st.session_state.logged_in = False
+
             st.rerun()
