@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Services Demo - MOCKUP ONLY</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .demo-banner {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: #ff4444;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            font-weight: bold;
+            z-index: 1000;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+
+        .container {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+            width: 100%;
+            max-width: 400px;
+            margin-top: 60px;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #2c3e50, #3498db);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 24px;
+            margin-bottom: 5px;
+        }
+
+        .header p {
+            opacity: 0.9;
+            font-size: 14px;
+        }
+
+        .content {
+            padding: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #3498db;
+            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+        }
+
+        .btn {
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(52, 152, 219, 0.3);
+        }
+
+        .btn:disabled {
+            background: #bdc3c7;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        .dashboard {
+            display: none;
+        }
+
+        .score-display {
+            background: linear-gradient(135deg, #27ae60, #2ecc71);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .score-number {
+            font-size: 48px;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        .score-range {
+            opacity: 0.9;
+            font-size: 14px;
+        }
+
+        .user-info {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .disclaimer {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            color: #856404;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+            font-size: 12px;
+            line-height: 1.5;
+        }
+
+        .logout-btn {
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            margin-top: 20px;
+        }
+
+        .logout-btn:hover {
+            box-shadow: 0 8px 20px rgba(231, 76, 60, 0.3);
+        }
+
+        .history {
+            margin-top: 20px;
+        }
+
+        .history-item {
+            background: #f8f9fa;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="demo-banner">
+        ⚠️ DEMO WEBSITE - NOT REAL - FOR DEMONSTRATION PURPOSES ONLY ⚠️
+    </div>
+
+    <div class="container">
+        <!-- Login Screen -->
+        <div id="loginScreen">
+            <div class="header">
+                <h1>Financial Services</h1>
+                <p>Demo Portal</p>
+            </div>
+            <div class="content">
+                <div class="disclaimer">
+                    <strong>DISCLAIMER:</strong> This is a mockup demonstration website only. No real financial data is processed. Not affiliated with any real financial institution.
+                </div>
+                
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label for="username">Username:</label>
+                        <input type="email" id="username" required placeholder="Enter username">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password:</label>
+                        <input type="password" id="password" required placeholder="Enter password">
+                    </div>
+                    <button type="submit" class="btn">Login to Demo</button>
+                </form>
+                
+                <div style="margin-top: 15px; padding: 10px; background: #e3f2fd; border-radius: 5px; font-size: 12px;">
+                    <strong>Demo Credentials:</strong><br>
+                    Username: loans@yourbank.com<br>
+                    Password: 12345
+                </div>
+            </div>
+        </div>
+
+        <!-- Dashboard Screen -->
+        <div id="dashboardScreen" class="dashboard">
+            <div class="header">
+                <h1>Score Lookup</h1>
+                <p>Demo Dashboard</p>
+            </div>
+            <div class="content">
+                <div class="user-info">
+                    <strong>Logged in as:</strong> loans@yourbank.com (DEMO USER)
+                </div>
+
+                <div class="form-group">
+                <label for="ssnNumber">Social Security Number (SSN):</label>
+                <input type="text" id="ssnNumber" placeholder="Enter SSN (XXX-XX-XXXX)" maxlength="11">
+            </div>
+            <button id="getScoreBtn" class="btn">Generate Demo Score</button>
+
+
+                <div id="scoreResult" style="display: none;">
+                    <div class="score-display">
+                        <div>Demo Score</div>
+                        <div class="score-number" id="scoreValue">---</div>
+                        <div class="score-range">Range: 300-850 (SIMULATED)</div>
+                    </div>
+                </div>
+
+                <div class="disclaimer">
+                    <strong>IMPORTANT:</strong> All scores generated are random demo values. This does not represent real credit scores or financial data. This is purely for demonstration purposes.
+                </div>
+
+                <div id="lookupHistory" class="history">
+                    <h3>Demo Lookup History</h3>
+                    <div id="historyList"></div>
+                </div>
+
+                <button id="logoutBtn" class="btn logout-btn">Logout</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Demo data storage (in memory only)
+        let lookupHistory = [];
+
+        // Login functionality
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const username = document.getElementById('username').value.trim();
+            const password = document.getElementById('password').value.trim();
+            
+            console.log('Attempting login with:', username, password);
+            
+            // Demo credentials check
+            if (username === 'loans@yourbank.com' && password === '12345') {
+                console.log('Login successful - switching to dashboard');
+                document.getElementById('loginScreen').style.display = 'none';
+                document.getElementById('dashboardScreen').style.display = 'block';
+            } else {
+                console.log('Login failed - incorrect credentials');
+                alert('Demo Login Failed. Please use:\nUsername: loans@yourbank.com\nPassword: 12345');
+            }
+        });
+
+        // Score generation functionality
+        document.getElementById('getScoreBtn').addEventListener('click', function() {
+            const ssnNumber = document.getElementById('ssnNumber').value.trim();
+            
+            // Basic SSN format validation (XXX-XX-XXXX)
+            if (!ssnNumber || !/^\d{3}-\d{2}-\d{4}$/.test(ssnNumber)) {
+                alert('Please enter a valid SSN in XXX-XX-XXXX format');
+                return;
+            }
+
+            // Generate random score between 300-850
+            const randomScore = Math.floor(Math.random() * (850 - 300 + 1)) + 300;
+            
+            // Display the score
+            document.getElementById('scoreValue').textContent = randomScore;
+            document.getElementById('scoreResult').style.display = 'block';
+            
+            // Add to demo history (now storing SSN instead of phone)
+            const timestamp = new Date().toLocaleString();
+            lookupHistory.unshift({
+                identifier: ssnNumber,
+                score: randomScore,
+                timestamp: timestamp
+            });
+            
+            // Update history display
+            updateHistoryDisplay();
+        });
+
+                // Update history display to show SSN (masked for privacy)
+        function updateHistoryDisplay() {
+            const historyList = document.getElementById('historyList');
+            historyList.innerHTML = '';
+            
+            lookupHistory.slice(0, 5).forEach(item => {
+                // Mask the SSN (show only last 4 digits)
+                const maskedSSN = item.identifier.replace(/^\d{3}-\d{2}/, 'XXX-XX');
+                
+                const historyItem = document.createElement('div');
+                historyItem.className = 'history-item';
+                historyItem.innerHTML = `
+                    <strong>SSN:</strong> ${maskedSSN}<br>
+                    <strong>Demo Score:</strong> ${item.score}<br>
+                    <strong>Time:</strong> ${item.timestamp}
+                `;
+                historyList.appendChild(historyItem);
+            });
+        }
+
+        // SSN input formatting (auto-adds hyphens)
+        document.getElementById('ssnNumber').addEventListener('input', function(e) {
+            let value = e.target.value.replace(/\D/g, '');
+            
+            if (value.length > 3 && value.length <= 5) {
+                value = value.replace(/^(\d{3})(\d{1,2})/, '$1-$2');
+            } else if (value.length > 5) {
+                value = value.replace(/^(\d{3})(\d{2})(\d{1,4})/, '$1-$2-$3');
+            }
+            
+            e.target.value = value.substring(0, 11); // Limit to 11 chars (XXX-XX-XXXX)
+        });
+
+
+        // Logout functionality
+        document.getElementById('logoutBtn').addEventListener('click', function() {
+            document.getElementById('dashboardScreen').style.display = 'none';
+            document.getElementById('loginScreen').style.display = 'block';
+            
+            // Clear form data
+            document.getElementById('phoneNumber').value = '';
+            document.getElementById('scoreResult').style.display = 'none';
+            document.getElementById('username').value = '';
+            document.getElementById('password').value = '';
+            
+        });
+
+
+    </script>
+</body>
+</html>
